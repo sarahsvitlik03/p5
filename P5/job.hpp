@@ -10,7 +10,7 @@
 
 class Job {
   
-    private:
+private:
     
         short int slow = 1;
         short int dirty = 2;
@@ -19,7 +19,7 @@ class Job {
         string kid;
         // Enum field to represent the job status
     
-    public:
+public:
     Job () :  slow(rand() % 5 + 1), dirty(rand() % 5 + 1), heavy (rand() % 6), jobValue(0), kid(""), status (not_started)
     chooseJob (string kidName, int jobNumber);
     announceDone ();

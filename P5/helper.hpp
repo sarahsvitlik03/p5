@@ -12,8 +12,8 @@ enum JobStatus {not_started, working, complete};
 
 class Helper {
   
-    private:
+private:
     
-    public:
+public:
     
 };
