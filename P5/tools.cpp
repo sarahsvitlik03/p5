@@ -11,7 +11,7 @@
 // Used to discard the remainder of the current input line
 istream&
 cleanline( istream& is ) {
-	return is.ignore(numeric_limits<streamsize>::max(), '\n');
+    return is.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 // ---------------------------------------------------------------------------
@@ -25,26 +25,24 @@ flush( istream& is )
 // --------------------------------------------------------------------------
 // Used to reset the formatting style from fixed or scientific back to default.
 ostream& general( ostream& os ){       // Use: cout <<fixed <<x <<general <<y;
-	os.unsetf( ios::floatfield );
-	return os;
+    os.unsetf( ios::floatfield );
+    return os;
 }
 
 // ----------------------------------------------------------------------------
 //  Routine process management.
 // ----------------------------------------------------------------------------
 // Print a neat header on the output.
-void
-fbanner( ostream& fout )
-{   char date[16], time[10];
-    when(date, time);
+void fbanner(ostream& fout) {
+    char date[16], time[10];
+    when(date, time); // Ensure `when()` is properly declared and defined
     fout << "\n----------------------------------------------------------------\n"
          << "\t" << NAME
-         << "\n\t" << CLASS << "\n\t" <<  date << "\t" << time << endl
+         << "\n\t" << CLASS << "\n\t" << date << "\t" << time << endl
          << "----------------------------------------------------------------\n";
 }
 
-void banner() { fbanner( cout ); }
-
+void banner() {fbanner(cout);}
 void bye( void ) { cerr << "\nNormal termination.\n" ; }
 
 // --------------------------------------------------------------------------

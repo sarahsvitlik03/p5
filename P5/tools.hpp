@@ -9,8 +9,8 @@
 // Local definitions.
 // Please enter your own name.
 // ---------------------------------------------------------------
-#define NAME    "Michael J. Fischer"
-#define CLASS   "CSCI 4547/6647"
+#define NAME    "Sarah Svitlik & Nicholas Larkin"
+#define CLASS   "CSCI 4547-02"
 
 #include <iostream>
 #include <fstream>
@@ -41,12 +41,12 @@ typedef FILE* cstream;
 // ---------------------------------------------------------------
 #define DUMPp(p) "\n"<<hex<<"   " #p " @ "<<(unsigned)&p<<"   value = "<<(unsigned)p<<"   " #p " --> "<<dec<<*p
 #define DUMPv(k) "\n"<<hex<<"   " #k " @ "<<(unsigned)&k<<"   value = "<<dec<<k
-
+//#define banner() fbanner(cout)
 // ---------------------------------------------------------------
 // Routine screen and process management.-------------------------
 // ---------------------------------------------------------------
-void     fbanner( ostream& fout );
-#define  banner()  fbanner( cout )
+void fbanner(ostream& fout);
+void banner();
 void     bye( void );
 void     say( const_cstring format, ... );
 void     delay( int );
