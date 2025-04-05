@@ -14,3 +14,8 @@ public:
 };
 
 pthread_mutex_t JobTable::mtx = PTHREAD_MUTEX_INITIALIZER;
+
+
+static kidMain(){
+    
+}

@@ -24,4 +24,3 @@ public:
     chooseJob (string kidName, int jobNumber);
     announceDone ();
 };
-
