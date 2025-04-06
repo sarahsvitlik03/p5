@@ -16,7 +16,7 @@ private:
     JobTable table;
     const string kids[4];
     int tid[4]; // Array of tids for kid threads
-    vector <int> jobs;
+    vector <Job> completedJobs;
     int time_t;
     int currentTime;
     

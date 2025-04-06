@@ -18,6 +18,18 @@ void Mom::initJobTable(){
 
 void Mom::scan(){
     
-    //Scan the job
+    //Scan the job Table looking for a finished job
+    for (int k = 0; k < 10; k++) {
+        if ((table.jobs[k].done = true)) {
+            // move the job object to the vector of completed jobs
+            completedJobs.push_back(table.jobs[k]);
+            // replace k with a newly created job
+            table.jobs[k] = Job();
+        }
+    }
+    
+}
+
+void Mom::print(){
     
 }
