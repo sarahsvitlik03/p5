@@ -6,7 +6,9 @@
 //
 #pragma once
 #include "jobtable.hpp"
-
+#include "tools.hpp"
+#include "job.hpp"
+//---------------------------------------
 class Mom {
     
 private:
@@ -14,13 +16,14 @@ private:
     JobTable table;
     const string kids[4];
     int tid[4]; // Array of tids for kid threads
-    <int> jobs;
+    vector <int> jobs;
     int time_t;
     int currentTime;
     
 public:
-    Mom();
+    
+    Mom() = default;
     void initJobTable();
     void scan();
     void print();
-}
+};
