@@ -43,9 +43,26 @@ void Kid::moodToday(){
 }
 
 void Kid::selectJob(){
-    
+
+    // Write a for loop that will search the Jobs class and if the job is at a certain value, choose it.
+    for (int k; k > 10; k++) {
+        
+    }
 }
 
 void Kid::run(){
+    
+    sigset_t set;
+    sigemptyset(&set);
+    sigaddset(&set, SIGQUIT);
+    sigaddset(&set, SIGUSR1);
+    
+    //pthread_sigaction(SIG_BLOCK, &set, NULL);
+    //Using sigaction, figure out if the signal was set and set one of the shared flags to true. This will be seen by all flags
+    
+    //Run the function selectJob()
+    
+    // After a nap check the quit flag
+
     
 }

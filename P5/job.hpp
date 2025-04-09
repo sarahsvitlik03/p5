@@ -13,9 +13,9 @@ class Job {
   
 private:
     
-    short int slow = 1;
-    short int dirty = 2;
-    short int heavy = 3;
+    short int slow;
+    short int dirty;
+    short int heavy;
     int jobValue; // Calculated from the slow, dirty, heavy values
     string kid;
     JobStatus status;
