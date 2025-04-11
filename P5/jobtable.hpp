@@ -16,8 +16,3 @@ public:
 };
 
 pthread_mutex_t JobTable::mtx = PTHREAD_MUTEX_INITIALIZER;
-
-// This will be the third parameter for the thread creation command
-/* static kidMain(){
-    // Transfer control to the OO world.
-} */ 

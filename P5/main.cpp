@@ -10,7 +10,9 @@
 #include <pthread.h>
 //-------------------------------------------
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    banner();
+    // Instantiate Mom and call run()
+    
     return 0;
 }

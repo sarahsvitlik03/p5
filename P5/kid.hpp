@@ -17,7 +17,8 @@ private:
     string name;
     Moods mood;
     vector <int> cJobs;
-    int count;
+    JobTable* jobTable;
+    int code;
     
 public:
     Kid(string& kidName, JobTable* table);
@@ -27,3 +28,10 @@ public:
     void run();
     
 };
+
+
+static void* kidMain(void* arg){
+     Kid* kid = static_cast<Kid*> (arg);
+    //kid-> run();
+    return nullptr;
+ }

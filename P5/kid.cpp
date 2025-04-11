@@ -6,9 +6,8 @@
 //
 #include "kid.hpp"
 //-----------------------------------
-Kid::Kid(string& kidName, JobTable* table) {
+Kid::Kid(string& kidName, JobTable* table) : name(kidName), jobTable(table) {
     sigset_t set;
-    int rc, sig;
     
     sigemptyset(&set);
     sigaddset(&set, SIGQUIT);
@@ -22,19 +21,19 @@ void Kid::print(){
 }
 
 void Kid::moodToday(){
-    if (count == 0) {
+    if (code == 0) {
         mood = lazy;
     }
-    else if (count == 1) {
+    else if (code == 1) {
         mood = prissy;
     }
-    else if ( count == 2) {
+    else if ( code == 2) {
         mood = over_tired;
     }
-    else if (count == 3){
+    else if (code == 3){
         mood = greedy;
     }
-    else if (count == 4) {
+    else if (code == 4) {
         mood = cooperative;
     }
     else {
@@ -42,13 +41,49 @@ void Kid::moodToday(){
     }
 }
 
-void Kid::selectJob(){
+void Kid::selectJob() {
+    int index = -1; // To track the index of the chosen job
+    int criteria = INT_MAX;  
 
-    // Write a for loop that will search the Jobs class and if the job is at a certain value, choose it.
-    for (int k; k > 10; k++) {
-        
+    for (int k = 0; k < 10; k++) {
+        if (jobTable->jobs[k].status == working || jobTable->jobs[k].status == complete) {
+            continue;
+        }
+        if (code == 0) { // Lazy
+            if (jobTable->jobs[k].heavy < criteria) {
+                criteria = jobTable->jobs[k].heavy;
+                index = k;
+            }
+        }
+        else if (code == 1) { // Prissy
+            if (jobTable->jobs[k].dirty < criteria) {
+                criteria = jobTable->jobs[k].dirty;
+                index = k;
+            }
+        }
+        else if (code == 2) { // Overtired
+            if (jobTable->jobs[k].slow < criteria) {
+                criteria = jobTable->jobs[k].slow;
+                index = k;
+            }
+        }
+        else if (code == 3) { // Greedy
+            if (jobTable->jobs[k].jobValue > criteria) {
+                criteria = jobTable->jobs[k].jobValue;
+                index = k;
+            }
+        }
+        else if (code == 4) { // Cooperative
+            index = 9;
+            break;
+        }
+    }
+
+    if (index != -1) {
+        jobTable->jobs[index].chooseJob(name, index);
     }
 }
+
 
 void Kid::run(){
     

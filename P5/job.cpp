@@ -8,7 +8,9 @@
 
 //-------------------------------------------
 void Job::chooseJob(string kidName, int jobNumber) {
-    //Chooses the job for the kid
+    kid = kidName;
+    jobValue = jobNumber;
+    status = working;
 }
 
 void Job::announceDone() {

@@ -26,4 +26,5 @@ public:
     void initJobTable();
     void scan();
     void print();
+    void run();
 };
